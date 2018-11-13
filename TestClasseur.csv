@@ -1,21 +1,21 @@
-Num Assaut;Tireur rouge;Tireur Bleu
-1;Berger Nicolas;Very Romain
-2;Brissac Kélia;Todeschini Soizic
-3;Bugada Sebastien ;Sullo Ninam
-4;David Natacha;Roussy Noa
-5;Dieudonne Aurélie;Navarro Cedric
-6;Durand Lilou;Meteoo Karim
-7;Erhard Sarah;Menguy Nathalie
-8;Gazon Célia;Menegain Mathieu 
-9;Guillien Sebastien;Marques Lea
-10;Landoz Mathieu;Marques Lea
-11;Marques Lea;Landoz Mathieu
-12;Marques Lea;Guillien Sebastien
-13;Menegain Mathieu ;Gazon Célia
-14;Menguy Nathalie;Erhard Sarah
-15;Meteoo Karim;Durand Lilou
-16;Navarro Cedric;Dieudonne Aurélie
-17;Roussy Noa;David Natacha
-18;Sullo Nina;Bugada Sebastien 
-19;Todeschini Soizic;Brissac Kélia
-20;Very Romain;Berger Nicolas
+Num Assaut;Tireur rouge;Club tireur rouge;Tireur Bleu;Club tireur bleu
+1;Berger Nicolas;Savouge;Very Romain;Savouge
+2;Brissac KÃ©lia;Belfort;Todeschini Soizic;Belfort
+3;Bugada Sebastien ;Belfort;Sullo Ninam;Belfort
+4;David Natacha;Belfort;Roussy Noa;Belfort
+5;Dieudonne AurÃ©lie;Lure;Navarro Cedric;Lure
+6;Durand Lilou;Savouge;Meteoo Karim;Savouge
+7;Erhard Sarah;Lure;Menguy Nathalie;Lure
+8;Gazon CÃ©lia;Savouge;Menegain Mathieu ;Savouge
+9;Guillien Sebastien;Lure;Marques Lea;Lure
+10;Landoz Mathieu;Lure;Marques Lea;Lure
+11;Marques Lea;Savouge;Landoz Mathieu;Savouge
+12;Marques Lea;Savouge;Guillien Sebastien;Savouge
+13;Menegain Mathieu ;Savouge;Gazon CÃ©lia;Savouge
+14;Menguy Nathalie;Belfort;Erhard Sarah;Belfort
+15;Meteoo Karim;Savouge;Durand Lilou;Savouge
+16;Navarro Cedric;Quetigny;Dieudonne AurÃ©lie;Quetigny
+17;Roussy Noa;Savouge;David Natacha;Savouge
+18;Sullo Nina;Quetigny;Bugada Sebastien ;Quetigny
+19;Todeschini Soizic;Quetigny;Brissac KÃ©lia;Quetigny
+20;Very Romain;Quetigny;Berger Nicolas;Quetigny
