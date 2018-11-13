@@ -1,5 +1,3 @@
-
-
 var nbCol = 5;
 
 function processData(allText) {
@@ -62,9 +60,5 @@ var generateHTML = function (lines) {
 
     return html;
 }
-
-
-
-
 
 fileInput.addEventListener('change', readFile);

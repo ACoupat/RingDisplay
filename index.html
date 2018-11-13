@@ -7,112 +7,39 @@
     <meta name="author" content="">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="lib/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
 
-    <!--
-      <link href="css/normalize.css" rel="stylesheet">
-      <link href="css/style.css" rel="stylesheet">
-    -->
 </head>
 
 <body>
 
-
-
-
 <input id="csv" type="file" accept="text/csv">
 <h1>Ring 1</h1>
-<div>
+<div class="center">
     <output id="out1"></output>
     <output id="out2"></output>
-    <output id="out3"></output>
-    <output id="out4"></output>
-    <output id="out5"></output>
-
-    <p> einvẑortnz^orintẑiortn hŝ</p>
 </div>
-
-<script src="lib/jquery.js"></script>
-<script src="main.js"></script>
-
-
-<script>
-
-    $(function(){
-
-        $("td").click()(function(){
-
-            $('td').css('background-color', '');
-            $(this).css('background-color', 'red');
-            $(this).hide();
-
-        })
-
-        $("p").click(function(){
-
-        });
-
-    });
-
-</script>
 
 
 </body>
 
+<script src="main.js"></script>
+<script>
+    $(function () {
+        $("output").on("click", "tr", function(event){
+            $("tr").removeClass('selected')
+            $(this).addClass('selected');
+        });
+
+        $('tr').on("click",function () {
+            $(this).toggleClass('selected');
+        });
+
+        $('p').click(function () {
+            $(this).toggleClass('selected');
+        });
+    });
+
+</script>
 </html>
-
-<style>
-
-    body{
-        font-family: Calibri,serif;
-        background-image: url("background.png");
-    }
-
-    h1{
-        text-align: center;
-    }
-
-    .selectedCell{
-        box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7),
-        -1px 2px 20px rgba(255, 255, 255, 0.6) inset;
-    }
-
-    table {
-        border-collapse: collapse;
-        width: 100%;
-    }
-
-    output {
-
-        float: left;
-        margin: 5px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-    }
-
-    th, td {
-        text-align: left;
-        padding: 8px;
-        font-weight: bold;
-    }
-    th{
-        background-color: #c1c1c1de;
-    }
-
-    .red {
-
-        color: red;
-    }
-
-    .blue {
-
-        color: blue;
-    }
-
-    tr:nth-child(even) {
-        background-color: #f2f2f2de
-    }
-
-    tr:nth-child(odd) {
-        background-color: #ffffffd1
-    }
-</style>
