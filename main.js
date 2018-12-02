@@ -1,63 +1,72 @@
-var nbCol = 5;
+let nbCol = 5;
+
+let lines = [];
+let maxLines = 3;
 
 function processData(allText) {
-    var allTextLines = allText.split(/\r\n|\n/);
+    let allTextLines = allText.split(/\r\n|\n/);
     //var headers = allTextLines[0].split(';');
-    var lines = [];
 
-    for (var i = 1; i < allTextLines.length; i++) {
-        var data = allTextLines[i].split(';');
+    for (let i = 1; i < allTextLines.length; i++) {
+        let data = allTextLines[i].split(';');
         if (data.length == nbCol) {
 
-            var tarr = [];
-            for (var j = 0; j < nbCol; j++) {
+            let tarr = [];
+            for (let j = 0; j < nbCol; j++) {
                 tarr.push(data[j]);
             }
             lines.push(tarr);
         }
     }
     console.log(lines);
-    return lines;
 }
 
-var fileInput = document.getElementById("csv"),
+let fileInput = document.getElementById("csv"),
 
 // Builds an array of lines containing the values
     readFile = function () {
-        var reader = new FileReader();
+        let reader = new FileReader();
         reader.onload = function () {
-            var content = reader.result;
-            document.getElementById('out1').innerHTML = generateHTML(processData(content));
-            document.getElementById('out2').innerHTML = generateHTML(processData(content));
-            // document.getElementById('out3').innerHTML = generateHTML(processData(content));
-            // document.getElementById('out4').innerHTML = generateHTML(processData(content));
-            // document.getElementById('out5').innerHTML = generateHTML(processData(content));
+            processData(reader.result);
+            document.getElementById('out').innerHTML = generateHTML();
         };
         // start reading the file. When it is done, calls the onload event defined above.
         reader.readAsBinaryString(fileInput.files[0]);
     };
 
-var generateHTML = function (lines) {
 
-    var html = "<table>";
+let generateHTML = function () {
 
-    //headers
-    html += "<tr><th>Num. Assaut</th><th>Tireur bleu</th><th>Tireur Rouge</th></tr>"
+    let html = "";
+    let lineCount = 0;
 
-    //data
-    for (var i = 0; i < lines.length; i++) {
-        html += "<tr>"
+    while (lineCount < lines.length) {
 
-        var num = "<td>"+lines[i][0]+"</td>"
+        html += "<table>";
 
-        var redBoxer = "<td class ='red'>"+lines[i][1] + " ("+lines[i][2] + ") "+"</td>"
-        var blueBoxer = "<td class ='blue'>"+lines[i][3] + " ("+lines[i][4] + ") "+"</td>"
+        //headers
+        html += "<tr><th>Num. Assaut</th><th>Tireur bleu</th><th>Tireur Rouge</th></tr>"
 
 
-        html += num + redBoxer + blueBoxer + "</tr>";
+        for (let i = 0; i < maxLines; i++) {
+            //data
+            if (lineCount < lines.length) {
+                html += "<tr>"
+
+                var num = "<td>" + lines[lineCount][0] + "</td>"
+
+                var redBoxer = "<td class ='red'>" + lines[lineCount][1] + " (" + lines[lineCount][2] + ") " + "</td>"
+                var blueBoxer = "<td class ='blue'>" + lines[lineCount][3] + " (" + lines[lineCount][4] + ") " + "</td>"
+
+
+                html += num + redBoxer + blueBoxer + "</tr>";
+                lineCount++;
+            } else {
+                break;
+            }
+        }
+        html += "</table>";
     }
-    html += "</table>";
-
     return html;
 }
 
