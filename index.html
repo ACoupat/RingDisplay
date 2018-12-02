@@ -13,8 +13,14 @@
 </head>
 
 <body>
+<div class = "parameters">
+    <input id="csv" type="file" accept="text/csv">
+    <br/>
+    <br/>
+    <input id="maxLineChooser" type="number" name="quantity" min="10" max="50" value="15"/>
+    <button onclick="changeMaxLines()">Valider</button>
+</div>
 
-<input id="csv" type="file" accept="text/csv">
 <h1>Ring 1</h1>
 <div class="center">
     <output id="out"></output>

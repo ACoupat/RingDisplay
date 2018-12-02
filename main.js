@@ -1,7 +1,15 @@
 let nbCol = 5;
 
 let lines = [];
-let maxLines = 3;
+let maxLines = 15;
+
+function changeMaxLines(){
+
+    maxLines = document.getElementById("maxLineChooser").value;
+    document.getElementById('out').innerHTML = generateHTML();
+    console.log(maxLines);
+
+}
 
 function processData(allText) {
     let allTextLines = allText.split(/\r\n|\n/);
@@ -45,7 +53,7 @@ let generateHTML = function () {
         html += "<table>";
 
         //headers
-        html += "<tr><th>Num. Assaut</th><th>Tireur bleu</th><th>Tireur Rouge</th></tr>"
+        html += "<tr><th>Num. Assaut</th><th>Tireur Rouge</th><th>Tireur Bleu</th></tr>"
 
 
         for (let i = 0; i < maxLines; i++) {
