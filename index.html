@@ -13,12 +13,15 @@
 </head>
 
 <body>
-<div class = "parameters">
-    <input id="csv" type="file" accept="text/csv">
-    <br/>
-    <br/>
-    <input id="maxLineChooser" type="number" name="quantity" min="10" max="50" value="15"/>
-    <button onclick="changeMaxLines()">Valider</button>
+<div>
+    <p id="toggleParameters">-</p>
+    <div id="parameters">
+        <input id="csv" type="file" accept="text/csv">
+        <br/>
+        <br/>
+        <input id="maxLineChooser" type="number" name="quantity" min="10" max="50" value="15"/>
+        <button onclick="changeMaxLines()">Valider</button>
+    </div>
 </div>
 
 <h1>Ring 1</h1>
@@ -30,21 +33,5 @@
 </body>
 
 <script src="main.js"></script>
-<script>
-    $(function () {
-        $("output").on("click", "tr", function(event){
-            $("tr").removeClass('selected')
-            $(this).addClass('selected');
-        });
 
-        $('tr').on("click",function () {
-            $(this).toggleClass('selected');
-        });
-
-        $('p').click(function () {
-            $(this).toggleClass('selected');
-        });
-    });
-
-</script>
 </html>

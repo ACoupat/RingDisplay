@@ -3,12 +3,73 @@ let nbCol = 5;
 let lines = [];
 let maxLines = 15;
 
-function changeMaxLines(){
+let currentSelected = 1;
+
+//Keyboard Input
+document.addEventListener('keydown', function (event) {
+
+    let amount = 0;
+
+    //left && up
+    if (event.keyCode == 37 || event.keyCode == 38) {
+        amount = -1;
+    }
+
+    //right && down && space
+    else if (event.keyCode == 39 || event.keyCode == 40 || event.keyCode == 32) {
+        amount = 1;
+    }
+
+    let sum = parseInt(currentSelected) + amount;
+
+    if (sum > 0 && sum < lines.length) {
+        currentSelected = sum;
+        highlightLineFromNumber();
+    }
+
+    console.log(currentSelected)
+});
+
+let resetTr = null;
+let highlightLineByNumber = null;
+
+//JQuery Stuff
+$(function () {
+
+    resetTr = function () {
+        $("tr").removeClass('selected')
+    };
+
+    highlightLineByNumber = function (number) {
+        $('#tr' + number).addClass('selected');
+    }
+
+    $("output").on("click", "tr", function (event) {
+        currentSelected = $(this).children("td")[0].textContent;
+        console.log(currentSelected);
+        highlightLineFromNumber();
+    });
+
+    $("#toggleParameters").click(function () {
+        $("#parameters").toggle();
+        let text = $("#toggleParameters").text()
+        $("#toggleParameters").text(text == "+" ? "-" : "+")
+    });
+
+});
+
+//Functions
+function changeMaxLines() {
 
     maxLines = document.getElementById("maxLineChooser").value;
     document.getElementById('out').innerHTML = generateHTML();
     console.log(maxLines);
 
+}
+
+function highlightLineFromNumber() {
+    resetTr();
+    highlightLineByNumber(currentSelected)
 }
 
 function processData(allText) {
@@ -59,9 +120,12 @@ let generateHTML = function () {
         for (let i = 0; i < maxLines; i++) {
             //data
             if (lineCount < lines.length) {
-                html += "<tr>"
 
-                var num = "<td>" + lines[lineCount][0] + "</td>"
+                let index = lines[lineCount][0];
+
+                html += "<tr id='tr" + index + "'>"
+
+                var num = "<td>" + parseInt(index) +"</td>"
 
                 var redBoxer = "<td class ='red'>" + lines[lineCount][1] + " (" + lines[lineCount][2] + ") " + "</td>"
                 var blueBoxer = "<td class ='blue'>" + lines[lineCount][3] + " (" + lines[lineCount][4] + ") " + "</td>"
