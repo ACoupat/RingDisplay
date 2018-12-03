@@ -64,3 +64,10 @@ tr:nth-child(odd) {
     padding: 10px;
 
 }
+
+#parameters{
+
+    border: 1px black solid;
+    padding: 10px;
+
+}

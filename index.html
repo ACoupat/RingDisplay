@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Ring 1 - Open Bisontin 2018</title>
     <meta name="author" content="">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,16 +16,24 @@
 <div>
     <p id="toggleParameters">-</p>
     <div id="parameters">
+        <h2>Parameters</h2>
         <input id="csv" type="file" accept="text/csv">
         <br/>
         <br/>
+        <label>Nombre de lignes max</label>
         <input id="maxLineChooser" type="number" name="quantity" min="10" max="50" value="15"/>
-        <button onclick="changeMaxLines()">Valider</button>
+        <br/>
+        <br/>
+        <label>Titre de la page</label>
+        <input id="titleField" type="text" value="Ring 1"/>
+        <br/>
+        <br/>
+        <button onclick="update()">Valider</button>
     </div>
 </div>
 <div class="clock"></div>
 
-<h1>Ring 1</h1>
+<h1 id="mainTitle">Ring 1</h1>
 <div class="center">
     <output id="out"></output>
 </div>

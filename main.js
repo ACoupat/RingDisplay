@@ -59,11 +59,17 @@ $(function () {
 });
 
 //Functions
-function changeMaxLines() {
+function update() {
 
+    //Lines
     maxLines = document.getElementById("maxLineChooser").value;
     document.getElementById('out').innerHTML = generateHTML();
     console.log(maxLines);
+
+    //Title
+    let newTitle = document.getElementById("titleField").value
+    document.getElementById("mainTitle").innerText = newTitle
+    document.title = newTitle + " - Open Bisontin"
 
 }
 
