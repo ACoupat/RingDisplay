@@ -67,7 +67,8 @@ tr:nth-child(odd) {
 
 #parameters{
 
-    border: 1px black solid;
+    border: 3px lightgrey groove;
     padding: 10px;
+    background-color: rgba(255,255,255,0.8);
 
 }
