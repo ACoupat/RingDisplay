@@ -22,7 +22,7 @@ document.addEventListener('keydown', function (event) {
 
     let sum = parseInt(currentSelected) + amount;
 
-    if (sum > 0 && sum < lines.length) {
+    if (sum > 0 && sum <= lines.length) {
         currentSelected = sum;
         highlightLineFromNumber();
     }
@@ -79,6 +79,7 @@ function highlightLineFromNumber() {
 }
 
 function processData(allText) {
+   lines = [];
     let allTextLines = allText.split(/\r\n|\n/);
     //var headers = allTextLines[0].split(';');
 
