@@ -50,10 +50,10 @@ $(function () {
         highlightLineFromNumber();
     });
 
-    $("#toggleParameters").click(function () {
+    $("#mainTitle").click(function () {
         $("#parameters").toggle();
-        let text = $("#toggleParameters").text()
-        $("#toggleParameters").text(text == "+" ? "-" : "+")
+        // let text = $("#toggleParameters").text()
+        // $("#toggleParameters").text(text == "+" ? "-" : "+")
     });
 
 });
