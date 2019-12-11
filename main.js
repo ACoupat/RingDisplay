@@ -1,5 +1,5 @@
 let nbCol = 5;
-
+//let lineHeight = 60;
 let lines = [];
 let maxLines = 15;
 
@@ -41,7 +41,7 @@ $(function () {
     };
 
     highlightLineByNumber = function (number) {
-        $('#tr' + number).addClass('selected');
+        $('#tr' + number).addClass('selected')
     }
 
     $("output").on("click", "tr", function (event) {
@@ -61,10 +61,19 @@ $(function () {
 //Functions
 function update() {
 
-    //Lines
+    //Line number
     maxLines = document.getElementById("maxLineChooser").value;
     document.getElementById('out').innerHTML = generateHTML();
     console.log(maxLines);
+
+    //Line height
+    let lineHeight = document.getElementById("lineHeightChooser").value
+     let lines = document.getElementsByTagName("td")
+       for (const element of lines){
+        let height =  lineHeight+"px";
+         element.style.height =height
+         console.log(element.style.height)
+       }
 
     //Title
     let newTitle = document.getElementById("titleField").value
@@ -159,10 +168,17 @@ function clock() {// We create a new Date object and assign it to a variable cal
         minutes = time.getMinutes(),
 
 
-        seconds = time.getSeconds();
+        seconds = time.getSeconds(),
+
+        year = time.getFullYear(),
+
+        month = time.getMonth(),
+
+        day = time.getUTCDate();
 
     document.querySelectorAll('.clock')[0].innerHTML = harold(hours) + ":" + harold(minutes) + ":" + harold(seconds);
-
+    document.querySelectorAll('.date')[0].innerHTML = day +"/" + (month+1) +"/" + year;
+    
     function harold(standIn) {
         if (standIn < 10) {
             standIn = '0' + standIn

@@ -20,14 +20,17 @@
         <br/>
         <br/>
         <label>Nombre de lignes max</label>
-        <input id="maxLineChooser" type="number" name="quantity" min="10" max="50" value="15"/>
+        <input id="maxLineChooser" onchange="update()" type="number" name="quantity" min="1" max="50" value="15"/>
         <br/>
         <br/>
+        <label>Hauteur des lignes</label>
+        <input id="lineHeightChooser" onchange="update()" type="number" name="lineHeight" min="1" max="150" value="60">
+        <br/>
+		<br/>
         <label>Titre de la page</label>
-        <input id="titleField" type="text" value="Ring 1"/>
+        <input id="titleField" onchange="update()" type="text" value="Ring 1"/>
         <br/>
         <br/>
-        <button onclick="update()">Valider</button>
     </div>
 </div>
 
@@ -37,6 +40,8 @@
     <output id="out"></output>
 </div>
 <div class="clock"></div>
+<div class="date"></div>
+<div class="openB">Open Bisontin</div>
 
 </body>
 
