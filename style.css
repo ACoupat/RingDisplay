@@ -102,6 +102,10 @@ tr:nth-child(odd) {
     float: left;
 }
 
+.combatCaption{
+    background-color: darkgray;
+}
+
 .openB{
 	text-align: center;
     color: #131313;

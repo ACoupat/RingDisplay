@@ -1,4 +1,4 @@
-let nbCol = 5;
+let nbCol = 6;
 //let lineHeight = 60;
 let lines = [];
 let maxLines = 15;
@@ -94,7 +94,7 @@ function processData(allText) {
 
     for (let i = 1; i < allTextLines.length; i++) {
         let data = allTextLines[i].split(';');
-        if (data.length == nbCol) {
+        if (data.length == nbCol || data.length == nbCol-1 ) {
 
             let tarr = [];
             for (let j = 0; j < nbCol; j++) {
@@ -138,6 +138,7 @@ let generateHTML = function () {
             if (lineCount < lines.length) {
 
                 let index = lines[lineCount][0];
+                let isCombat = lines[lineCount][nbCol-1];
 
                 html += "<tr id='tr" + index + "'>"
 
@@ -146,8 +147,9 @@ let generateHTML = function () {
                 var redBoxer = "<td class ='red'>" + lines[lineCount][1] + " (" + lines[lineCount][2] + ") " + "</td>"
                 var blueBoxer = "<td class ='blue'>" + lines[lineCount][3] + " (" + lines[lineCount][4] + ") " + "</td>"
 
+                var combatIcon = isCombat ? "<td class='combatCaption'>Combat</td>" : "<td></td>";
 
-                html += num + redBoxer + blueBoxer + "</tr>";
+                html += num + redBoxer + blueBoxer + combatIcon + "</tr>";
                 lineCount++;
             } else {
                 break;
