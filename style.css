@@ -1,20 +1,45 @@
 body {
     font-family: Calibri, serif;
-    background-image: url("background.png");
+    //background-image: url("imgs/background.png");
+    background-image: url("imgs/background2.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100%;
+    margin: 0;
 }
-
 
 html {
     height: 100%;
 }
 
+footer{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    display: inline;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+}
 
 .selectedCell {
     box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7),
     -1px 2px 20px rgba(255, 255, 255, 0.6) inset;
+}
+
+.title-img{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
 }
 
 table {
@@ -30,8 +55,6 @@ output {
     float: left;
     margin: 5px;
     width:100%;
-
-
 }
 
 th, td {
@@ -92,6 +115,9 @@ tr:nth-child(odd) {
     font-size: 50px;
     letter-spacing: .15em;
     float: right;
+    margin-right: 20px;
+    font-family: fonts/Ubuntu;
+    font-weight: bold;
 }
 
 .date{
@@ -100,10 +126,15 @@ tr:nth-child(odd) {
     font-size: 50px;
     letter-spacing: .15em;
     float: left;
+    margin-left: 20px;
+    font-family: fonts/Ubuntu;
+    font-weight: bold;
 }
 
 .combatCaption{
-    background-color: darkgray;
+    background-color: #a9a9a96b;
+    text-align: center;
+    border: 2px darkgray solid;
 }
 
 .openB{
@@ -112,6 +143,8 @@ tr:nth-child(odd) {
     font-size: 50px;
     letter-spacing: .15em;
     margin: 0;
+    font-family: fonts/Ubuntu;
+    font-weight: bold;
 }
 
 #mainTitle {
@@ -119,5 +152,10 @@ tr:nth-child(odd) {
     color: #131313;
     font-size: 50px;
     letter-spacing: .15em;
-    margin: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top:0;
+    margin-bottom: 0;
+    font-family: fonts/Ubuntu;
+    font-weight: bold;
 }

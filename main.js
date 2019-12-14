@@ -114,9 +114,11 @@ let fileInput = document.getElementById("csv"),
         reader.onload = function () {
             processData(reader.result);
             document.getElementById('out').innerHTML = generateHTML();
+            update();
         };
         // start reading the file. When it is done, calls the onload event defined above.
         reader.readAsBinaryString(fileInput.files[0]);
+        
     };
 
 
@@ -130,7 +132,7 @@ let generateHTML = function () {
         html += "<table>";
 
         //headers
-        html += "<tr><th>Num. Assaut</th><th>Tireur Rouge</th><th>Tireur Bleu</th></tr>"
+        html += "<tr><th>Num. Assaut</th><th>Tireur Rouge</th><th>Tireur Bleu</th><th/></tr>"
 
 
         for (let i = 0; i < maxLines; i++) {
@@ -138,7 +140,7 @@ let generateHTML = function () {
             if (lineCount < lines.length) {
 
                 let index = lines[lineCount][0];
-                let isCombat = lines[lineCount][nbCol-1];
+                let label = lines[lineCount][nbCol-1];
 
                 html += "<tr id='tr" + index + "'>"
 
@@ -147,9 +149,9 @@ let generateHTML = function () {
                 var redBoxer = "<td class ='red'>" + lines[lineCount][1] + " (" + lines[lineCount][2] + ") " + "</td>"
                 var blueBoxer = "<td class ='blue'>" + lines[lineCount][3] + " (" + lines[lineCount][4] + ") " + "</td>"
 
-                var combatIcon = isCombat ? "<td class='combatCaption'>Combat</td>" : "<td></td>";
+                var combatLabel = label ? "<td class='combatCaption'>"+ label +"</td>" : "<td></td>";
 
-                html += num + redBoxer + blueBoxer + combatIcon + "</tr>";
+                html += num + redBoxer + blueBoxer + combatLabel + "</tr>";
                 lineCount++;
             } else {
                 break;
