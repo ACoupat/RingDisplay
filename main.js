@@ -52,8 +52,6 @@ $(function () {
 
     $("#mainTitle").click(function () {
         $("#parameters").toggle();
-        // let text = $("#toggleParameters").text()
-        // $("#toggleParameters").text(text == "+" ? "-" : "+")
     });
 
 });
